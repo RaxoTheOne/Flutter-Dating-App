@@ -1,10 +1,15 @@
 import 'package:dating_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class UserInfoPage extends StatelessWidget {
-  UserInfoPage({ Key? key, required this.image,x}) : super(key: key);
+class UserInfoPage extends StatefulWidget {
+  const UserInfoPage({ super.key, required this.image,x});
   final String image;
 
+  @override
+  State<UserInfoPage> createState() => _UserInfoPageState();
+}
+
+class _UserInfoPageState extends State<UserInfoPage> {
   List<String> images = [
     'assets/images/user1.jpg',
     'assets/images/user7.png',
@@ -56,7 +61,7 @@ class UserInfoPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(50)),
                     image: DecorationImage(
-                      image: AssetImage(image),
+                      image: AssetImage(widget.image),
                       fit: BoxFit.fitWidth,
                       alignment: Alignment.topCenter,
                       scale: 1.1,

@@ -3,7 +3,7 @@ import 'package:dating_app/pages/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
-  const ProfileCard({Key? key, required this.image}) : super(key: key);
+  const ProfileCard({super.key, required this.image});
   final String image;
 
   @override

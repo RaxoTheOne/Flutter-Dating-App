@@ -4,14 +4,13 @@ import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   List<ProfileCard> profile = [];
 
   List<String> images = [
@@ -37,14 +36,27 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title:  Text('For You', style: TextStyle(color: ColorConstants.primaryColor, fontSize: 28, fontWeight: FontWeight.bold)),
+        title: Text(
+          'For You',
+          style: TextStyle(
+            color: ColorConstants.primaryColor,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         leading: IconButton(
-          icon: Icon(Icons.person, color: ColorConstants.primaryColor,),
+          icon: Icon(
+            Icons.person,
+            color: ColorConstants.primaryColor,
+          ),
           onPressed: () {},
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.message, color: ColorConstants.primaryColor,),
+            icon: Icon(
+              Icons.message,
+              color: ColorConstants.primaryColor,
+            ),
             onPressed: () {},
           ),
         ],
@@ -52,8 +64,10 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           AppinioSwiper(
-            padding: const EdgeInsets.only(bottom: 130, top: 16),
-            cards: profile,
+            cardCount: profile.length,
+            cardBuilder: (context, index) {
+              return profile[index];
+            },
           ),
           Positioned(
             bottom: 50,
@@ -63,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InkWell(
-                  onTap: () { },
+                  onTap: () {},
                   child: Container(
                     width: 64,
                     height: 64,
@@ -78,11 +92,15 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    child: Icon(Icons.close, color: ColorConstants.close, size: 32,),
+                    child: Icon(
+                      Icons.close,
+                      color: ColorConstants.close,
+                      size: 32,
+                    ),
                   ),
                 ),
                 InkWell(
-                  onTap: () { },
+                  onTap: () {},
                   child: Container(
                     width: 56,
                     height: 56,
@@ -97,11 +115,15 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    child: Icon(Icons.star, color: ColorConstants.star, size: 32,),
+                    child: Icon(
+                      Icons.star,
+                      color: ColorConstants.star,
+                      size: 32,
+                    ),
                   ),
                 ),
                 InkWell(
-                  onTap: () { },
+                  onTap: () {},
                   child: Container(
                     width: 64,
                     height: 64,
@@ -116,12 +138,16 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    child: Icon(Icons.favorite, color: ColorConstants.favorite, size: 32,),
+                    child: Icon(
+                      Icons.favorite,
+                      color: ColorConstants.favorite,
+                      size: 32,
+                    ),
                   ),
                 ),
               ],
-            )
-          )
+            ),
+          ),
         ],
       ),
     );
