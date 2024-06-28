@@ -2,7 +2,7 @@ import 'package:dating_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class UserInfoPage extends StatefulWidget {
-  const UserInfoPage({ super.key, required this.image,x});
+  const UserInfoPage({super.key, required this.image, x});
   final String image;
 
   @override
@@ -33,7 +33,10 @@ class _UserInfoPageState extends State<UserInfoPage> {
         leading: Padding(
           padding: const EdgeInsets.only(left: 24),
           child: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: ColorConstants.primaryColor,),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: ColorConstants.primaryColor,
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -44,7 +47,10 @@ class _UserInfoPageState extends State<UserInfoPage> {
           Padding(
             padding: const EdgeInsets.only(left: 8),
             child: IconButton(
-              icon: Icon(Icons.more_vert, color: ColorConstants.primaryColor,),
+              icon: Icon(
+                Icons.more_vert,
+                color: ColorConstants.primaryColor,
+              ),
               onPressed: () {},
             ),
           ),
@@ -52,32 +58,36 @@ class _UserInfoPageState extends State<UserInfoPage> {
       ),
       body: Stack(
         children: [
-          CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 2,
-                  margin: const EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(50)),
-                    image: DecorationImage(
-                      image: AssetImage(widget.image),
-                      fit: BoxFit.fitWidth,
-                      alignment: Alignment.topCenter,
-                      scale: 1.1,
-                    ),
+          CustomScrollView(slivers: [
+            SliverToBoxAdapter(
+              child: Container(
+                height: MediaQuery.of(context).size.height / 2,
+                margin: const EdgeInsets.only(left: 20),
+                decoration: BoxDecoration(
+                  borderRadius:
+                      const BorderRadius.only(bottomLeft: Radius.circular(50)),
+                  image: DecorationImage(
+                    image: AssetImage(widget.image),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topCenter,
+                    scale: 1.1,
                   ),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: Padding(
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
                 padding: const EdgeInsets.only(left: 20, top: 20),
                 child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        Text('Malena Veronica, 23', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: ColorConstants.secondary)),
+                        Text('Malena Veronica, 23',
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500,
+                                color: ColorConstants.secondary)),
                         const SizedBox(width: 10),
                         Container(
                           width: 10,
@@ -89,32 +99,91 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         )
                       ],
                     ),
-                    const SizedBox(height: 8,),
-                    Text('Fashion Designer at Victoria Secret', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 8,),
-                    Text('69m away', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 32,),
-                    Text('ABOUT ME', style: TextStyle(color: ColorConstants.secondary, fontSize: 18, fontWeight: FontWeight.w500)),
-                    const SizedBox(height: 8,),
-                    Text('Hey guys, This is Malena. I’m here to find someone for hookup. I’m not interested in something serious. I would love to hear your adventurous story.', style: TextStyle(color: ColorConstants.secondary, fontSize: 16, height: 1.5, fontWeight: FontWeight.normal)),
-                    const SizedBox(height: 32,),
-                    Text('INTERESTS', style: TextStyle(color: ColorConstants.secondary, fontSize: 18, fontWeight: FontWeight.w500)),
-                    const SizedBox(height: 8,),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text('Fashion Designer at Victoria Secret',
+                        style: TextStyle(
+                            color: ColorConstants.secondary, fontSize: 16)),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text('69m away',
+                        style: TextStyle(
+                            color: ColorConstants.secondary, fontSize: 16)),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    Text('ABOUT ME',
+                        style: TextStyle(
+                            color: ColorConstants.secondary,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500)),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                        'Hey guys, This is Malena. I’m here to find someone for hookup. I’m not interested in something serious. I would love to hear your adventurous story.',
+                        style: TextStyle(
+                            color: ColorConstants.secondary,
+                            fontSize: 16,
+                            height: 1.5,
+                            fontWeight: FontWeight.normal)),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    Text('INTERESTS',
+                        style: TextStyle(
+                            color: ColorConstants.secondary,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500)),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Wrap(
                       spacing: 10,
                       children: [
-                        _chip(background: ColorConstants.lightOrange, color: ColorConstants.brightOrange, title: 'Travel'),
-                        _chip(background: ColorConstants.lightBlue, color: ColorConstants.brightBlue, title: 'Dance'),
-                        _chip(background: ColorConstants.lightOrange1, color: ColorConstants.brightOrange1, title: 'Fitness'),
-                        _chip(background: ColorConstants.lightPurple, color: ColorConstants.brightPurple, title: 'Reading'),
-                        _chip(background: ColorConstants.lightPurple1, color: ColorConstants.brightPurple1, title: 'Photography'),
-                        _chip(background: ColorConstants.lightGreen, color: ColorConstants.brightGreen, title: 'Music'),
-                        _chip(background: ColorConstants.lightPink, color: ColorConstants.brightPink, title: 'Movie'),
+                        _chip(
+                            background: ColorConstants.lightOrange,
+                            color: ColorConstants.brightOrange,
+                            title: 'Travel'),
+                        _chip(
+                            background: ColorConstants.lightBlue,
+                            color: ColorConstants.brightBlue,
+                            title: 'Dance'),
+                        _chip(
+                            background: ColorConstants.lightOrange1,
+                            color: ColorConstants.brightOrange1,
+                            title: 'Fitness'),
+                        _chip(
+                            background: ColorConstants.lightPurple,
+                            color: ColorConstants.brightPurple,
+                            title: 'Reading'),
+                        _chip(
+                            background: ColorConstants.lightPurple1,
+                            color: ColorConstants.brightPurple1,
+                            title: 'Photography'),
+                        _chip(
+                            background: ColorConstants.lightGreen,
+                            color: ColorConstants.brightGreen,
+                            title: 'Music'),
+                        _chip(
+                            background: ColorConstants.lightPink,
+                            color: ColorConstants.brightPink,
+                            title: 'Movie'),
                       ],
                     ),
-                    const SizedBox(height: 24,),
-                    Text('INSTAGRAM PHOTOS', style: TextStyle(color: ColorConstants.secondary, fontSize: 18, fontWeight: FontWeight.w500)),
-                    const SizedBox(height: 8,),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Text('INSTAGRAM PHOTOS',
+                        style: TextStyle(
+                            color: ColorConstants.secondary,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500)),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     SizedBox(
                       height: 120,
                       child: ListView.builder(
@@ -138,13 +207,14 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         },
                       ),
                     ),
-                    const SizedBox(height: 100,)
+                    const SizedBox(
+                      height: 100,
+                    )
                   ],
                 ),
               ),
-              ),
-            ]
-          ),
+            ),
+          ]),
           Positioned(
             bottom: 0,
             right: 0,
@@ -167,7 +237,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () { },
+                    onTap: () {},
                     child: Container(
                       width: 64,
                       height: 64,
@@ -182,11 +252,15 @@ class _UserInfoPageState extends State<UserInfoPage> {
                           ),
                         ],
                       ),
-                      child: Icon(Icons.close, color: ColorConstants.close, size: 32,),
+                      child: Icon(
+                        Icons.close,
+                        color: ColorConstants.close,
+                        size: 32,
+                      ),
                     ),
                   ),
                   InkWell(
-                    onTap: () { },
+                    onTap: () {},
                     child: Container(
                       width: 56,
                       height: 56,
@@ -201,11 +275,15 @@ class _UserInfoPageState extends State<UserInfoPage> {
                           ),
                         ],
                       ),
-                      child: Icon(Icons.star, color: ColorConstants.star, size: 32,),
+                      child: Icon(
+                        Icons.star,
+                        color: ColorConstants.star,
+                        size: 32,
+                      ),
                     ),
                   ),
                   InkWell(
-                    onTap: () { },
+                    onTap: () {},
                     child: Container(
                       width: 64,
                       height: 64,
@@ -220,7 +298,11 @@ class _UserInfoPageState extends State<UserInfoPage> {
                           ),
                         ],
                       ),
-                      child: Icon(Icons.favorite, color: ColorConstants.favorite, size: 32,),
+                      child: Icon(
+                        Icons.favorite,
+                        color: ColorConstants.favorite,
+                        size: 32,
+                      ),
                     ),
                   ),
                 ],
@@ -232,7 +314,10 @@ class _UserInfoPageState extends State<UserInfoPage> {
     );
   }
 
-  Widget _chip({required Color background, required Color color, required String title}) {
+  Widget _chip(
+      {required Color background,
+      required Color color,
+      required String title}) {
     return Chip(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       label: Text(title, style: TextStyle(color: color)),

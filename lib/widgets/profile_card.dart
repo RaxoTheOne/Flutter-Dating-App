@@ -18,19 +18,18 @@ class ProfileCard extends StatelessWidget {
           InkWell(
             onTap: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(builder:  (context) => UserInfoPage(image: image))
-              );
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => UserInfoPage(image: image)));
             },
             child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                image: DecorationImage(
-                  image: AssetImage(image.toString()),
-                  fit: BoxFit.cover,
-                ),
-                )
+                decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                image: AssetImage(image.toString()),
+                fit: BoxFit.cover,
               ),
+            )),
           ),
           Positioned(
             bottom: 30,
@@ -41,14 +40,24 @@ class ProfileCard extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.8),
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), bottomLeft: Radius.circular(16)),
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    bottomLeft: Radius.circular(16)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Malena Veronica, 23', style: TextStyle(color: ColorConstants.secondary, fontSize: 24, fontWeight: FontWeight.w500)),
-                  const SizedBox(height: 12,),
-                  Text('Fashion Designer at Victoria Secret', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
+                  Text('Malena Veronica, 23',
+                      style: TextStyle(
+                          color: ColorConstants.secondary,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500)),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Text('Fashion Designer at Victoria Secret',
+                      style: TextStyle(
+                          color: ColorConstants.secondary, fontSize: 16)),
                 ],
               ),
             ),
